@@ -1,0 +1,9 @@
+<h1>Kanto Gym Leaders</h1>
+    <div class="list">
+      @for (leader of leaders; track leader.name) {
+        <app-leader-card 
+          [name]="leader.name" 
+          [specialty]="leader.type" 
+          [monologue]="leader.text" />
+      }
+    </div>

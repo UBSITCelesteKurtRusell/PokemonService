@@ -1,9 +1,29 @@
-<h1>Kanto Gym Leaders</h1>
-    <div class="list">
-      @for (leader of leaders; track leader.name) {
-        <app-leader-card 
-          [name]="leader.name" 
-          [specialty]="leader.type" 
-          [monologue]="leader.text" />
-      }
-    </div>
+
+<div class="container">
+    <h1>Johto Leaders</h1>
+    @for(trainer of johtoService.trainers(); track trainer.name){
+        <div class="trainer-card">
+            <h2>Trainer: {{trainer.name}} </h2>
+            <h3>Leader badge: {{trainer.leaderBadge}} </h3>
+            <h3>Town: {{trainer.town}} </h3>
+            <h3>Specialty: {{trainer.Specialty}} </h3>
+           
+            <ul>
+                
+                <h3>Team:</h3>
+                @for(pokemon of trainer.team; track $index){
+            <!-- name: 'Roxanne',
+      leaderBadge:'Stone Badge',
+      team:['Pikachu','Charizard'],
+      town: 'Rustboro City',
+      Specialty:'Rock'-->
+      
+            <li>
+                <strong> {{pokemon}} </strong>  
+            </li>
+                
+                }
+                </ul>
+        </div>
+    }
+</div>

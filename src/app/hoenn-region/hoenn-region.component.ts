@@ -1,6 +1,7 @@
 import { Component,inject} from '@angular/core';
 import { HoennServiceService } from '../hoenn-service.service';
 
+
 @Component({
   selector: 'app-hoenn-region',
   imports: [],

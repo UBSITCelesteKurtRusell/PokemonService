@@ -1,23 +1,27 @@
 
 <div class="container">
-    <h1>Pokemon League Registry</h1>
+    <h1>Hoenn Leaders</h1>
     @for(trainer of hoennService.trainers(); track trainer.name){
         <div class="trainer-card">
             <h2>Trainer: {{trainer.name}} </h2>
-            <h3>leaderBadge: {{trainer.leaderBadge}} </h3>
+            <h3>Leader badge: {{trainer.leaderBadge}} </h3>
             <h3>Town: {{trainer.town}} </h3>
-            
+            <h3>Specialty: {{trainer.Specialty}} </h3>
            
             <ul>
+                
+                <h3>Team:</h3>
                 @for(pokemon of trainer.team; track $index){
             <!-- name: 'Roxanne',
       leaderBadge:'Stone Badge',
       team:['Pikachu','Charizard'],
       town: 'Rustboro City',
       Specialty:'Rock'-->
+      
             <li>
                 <strong> {{pokemon}} </strong>  
             </li>
+                
                 }
                 </ul>
         </div>
